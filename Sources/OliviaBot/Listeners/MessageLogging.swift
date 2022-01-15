@@ -51,6 +51,33 @@ class MessageLogger {
             self.bot.send(["content": topMessage, "embeds": [embed.encode()]], to: 931401024571318293)
         }
         
+        /// When a message is edited
+        self.bot.on(.messageUpdate) { data in
+            /* let (msg, channel) = data as! (Message, GuildChannel)
+            
+            // The message may have been created when the bot was down. As such, check for nil
+            guard let messageStruct = self.messageCache[msg.id] else { return }
+            
+            if messageStruct.author?.username == nil {
+                return
+            }
+            
+            var oldMessage = messageStruct.content + "\n"
+            let _ = messageStruct.attachments.map{ oldMessage += $0.url + "\n" }
+            
+            var newMessage = msg.content + "\n"
+            let _ = msg.attachments.map{ newMessage += $0.url + "\n" }
+            
+            var embed = Embed()
+            embed.color = 0xffff00
+            embed.addField("From: ", value: oldMessage, isInline: false)
+            embed.addField("To: ", value: newMessage, isInline: false)
+            
+            let topMessage = "`\(self.timeStamp())` :warning: **\(messageStruct.author!.username!)**#\(messageStruct.author!.discriminator!) (ID: \(messageStruct.author!.id.rawValue)) edited a message in <#\(channel.id.rawValue)>:"
+            
+            self.bot.send(["content": topMessage, "embeds": [embed.encode()]], to: 931401024571318293) */
+        }
+        
         /// When a member joined the server
         self.bot.on(.guildMemberAdd) { data in
             let (guild, member) = data as! (Guild, Member)
