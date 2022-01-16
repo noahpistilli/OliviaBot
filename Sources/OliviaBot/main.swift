@@ -1,7 +1,7 @@
 import Sword
 
 let options = ShieldOptions(prefixes: ["o-"])
-let bot = Shield(token: "ODcyMzExMzYyNjk1NjE0NDg0.YQoBQw.ejrqNbXXUHOZuN4FrpZOojvTfMM", shieldOptions: options)
+let bot = Shield(token: "token", shieldOptions: options)
 
 bot.setIntents(intents: .guilds, .guildMembers, .guildMessages)
 
