@@ -32,8 +32,8 @@
         "package": "Sword",
         "repositoryURL": "https://github.com/SketchMaster2001/Sword",
         "state": {
-          "branch": "linux",
-          "revision": "e2454630854fb89ec146cbbabb7765447a982fc5",
+          "branch": "master",
+          "revision": "2514c6f1e8b9e157d3f25e3e82accced063caf76",
           "version": null
         }
       },

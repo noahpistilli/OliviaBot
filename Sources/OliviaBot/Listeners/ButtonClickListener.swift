@@ -12,7 +12,7 @@ func buttonClick() {
     bot.on(.buttonEvent) { data in
         var button = data as! ButtonEvent
         button.setEphemeral(isEphermeral: true)
-        
+
         if button.selectedButton.customId == "server_updates" {
             // Check if the member has the role
             for role in button.member!.roles {

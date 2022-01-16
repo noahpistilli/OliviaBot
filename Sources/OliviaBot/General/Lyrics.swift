@@ -16,12 +16,12 @@ import Sword
 struct Lyrics {
     func getLyrics(event: SlashCommandEvent) {
         let name = event.getOptionAsString(optionName: "name")!
-        // This can take a while, set ephemeral
+        
+        // This can take a while, defer reply
         var event = event
         event.deferReply()
         
         let embed = parseLyrics(name: name)
-        
         event.replyEmbeds(embeds: embed)
     }
     

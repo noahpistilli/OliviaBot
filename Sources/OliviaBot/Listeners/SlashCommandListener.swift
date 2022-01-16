@@ -18,5 +18,8 @@ func slashCommandListener() {
         else if event.name == "lyrics" {
             Lyrics().getLyrics(event: event)
         }
+        else if event.name == "confessions" {
+            Confessions().sendSuccess(event: event)
+        }
     }
 }

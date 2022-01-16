@@ -13,7 +13,7 @@ func clear(event: SlashCommandEvent) {
         let cache = messageLogger.messageCache
         
         let amount = event.getOptionAsInt(optionName: "amount")!
-        
+    
         // Clear the messages now
         var messagesToClear = [Snowflake]()
         
