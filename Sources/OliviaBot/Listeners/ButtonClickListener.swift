@@ -13,6 +13,7 @@ func buttonClick() {
         var button = data as! ButtonEvent
         button.setEphemeral(isEphermeral: true)
 
+        // MARK: Ping Updates
         if button.selectedButton.customId == "server_updates" {
             // Check if the member has the role
             for role in button.member!.roles {
@@ -112,6 +113,283 @@ func buttonClick() {
             
             button.guild.modifyMember(button.user.id, with: ["roles": rolesArray])
             button.reply(message: "Successfully added the Tour Updates role.")
+        }
+        
+        // MARK: General Roles
+        else if button.selectedButton.customId == "female" {
+            // Check if the member has the role
+            for role in button.member!.roles {
+                if role.name == "she/her" {
+                    let roles = button.member!.roles.filter { $0.id != 932448143348490310 }
+                    var rolesArray = [UInt64]()
+                    
+                    for role in roles {
+                        rolesArray.append(role.id.rawValue)
+                    }
+                    
+                    button.guild.modifyMember(button.user.id, with: ["roles": rolesArray])
+                    button.reply(message: "Successfully removed the She/Her role.")
+                    return
+                }
+            }
+            
+            var rolesArray: [UInt64] = [932448143348490310]
+            for role in button.member!.roles {
+                rolesArray.append(role.id.rawValue)
+            }
+            
+            button.guild.modifyMember(button.user.id, with: ["roles": rolesArray])
+            button.reply(message: "Successfully added the She/Her role.")
+        }
+        else if button.selectedButton.customId == "male" {
+            // Check if the member has the role
+            for role in button.member!.roles {
+                if role.name == "he/him" {
+                    let roles = button.member!.roles.filter { $0.id != 932448420722008115 }
+                    var rolesArray = [UInt64]()
+                    
+                    for role in roles {
+                        rolesArray.append(role.id.rawValue)
+                    }
+                    
+                    button.guild.modifyMember(button.user.id, with: ["roles": rolesArray])
+                    button.reply(message: "Successfully removed the He/Him role.")
+                    return
+                }
+            }
+            
+            var rolesArray: [UInt64] = [932448420722008115]
+            for role in button.member!.roles {
+                rolesArray.append(role.id.rawValue)
+            }
+            
+            button.guild.modifyMember(button.user.id, with: ["roles": rolesArray])
+            button.reply(message: "Successfully added the He/Him role.")
+        }
+        else if button.selectedButton.customId == "she_they" {
+            // Check if the member has the role
+            for role in button.member!.roles {
+                if role.name == "she/they" {
+                    let roles = button.member!.roles.filter { $0.id != 932448836419461150 }
+                    var rolesArray = [UInt64]()
+                    
+                    for role in roles {
+                        rolesArray.append(role.id.rawValue)
+                    }
+                    
+                    button.guild.modifyMember(button.user.id, with: ["roles": rolesArray])
+                    button.reply(message: "Successfully removed the She/They role.")
+                    return
+                }
+            }
+            
+            var rolesArray: [UInt64] = [932448836419461150]
+            for role in button.member!.roles {
+                rolesArray.append(role.id.rawValue)
+            }
+            
+            button.guild.modifyMember(button.user.id, with: ["roles": rolesArray])
+            button.reply(message: "Successfully added the She/They role.")
+        }
+        else if button.selectedButton.customId == "he_they" {
+            // Check if the member has the role
+            for role in button.member!.roles {
+                if role.name == "he/they" {
+                    let roles = button.member!.roles.filter { $0.id != 932449018695520296 }
+                    var rolesArray = [UInt64]()
+                    
+                    for role in roles {
+                        rolesArray.append(role.id.rawValue)
+                    }
+                    
+                    button.guild.modifyMember(button.user.id, with: ["roles": rolesArray])
+                    button.reply(message: "Successfully removed the He/They role.")
+                    return
+                }
+            }
+            
+            var rolesArray: [UInt64] = [932449018695520296]
+            for role in button.member!.roles {
+                rolesArray.append(role.id.rawValue)
+            }
+            
+            button.guild.modifyMember(button.user.id, with: ["roles": rolesArray])
+            button.reply(message: "Successfully added the He/They role.")
+        }
+        else if button.selectedButton.customId == "they" {
+            // Check if the member has the role
+            for role in button.member!.roles {
+                if role.name == "they/them" {
+                    let roles = button.member!.roles.filter { $0.id != 932449220441542747 }
+                    var rolesArray = [UInt64]()
+                    
+                    for role in roles {
+                        rolesArray.append(role.id.rawValue)
+                    }
+                    
+                    button.guild.modifyMember(button.user.id, with: ["roles": rolesArray])
+                    button.reply(message: "Successfully removed the They/Them role.")
+                    return
+                }
+            }
+            
+            var rolesArray: [UInt64] = [932449220441542747]
+            for role in button.member!.roles {
+                rolesArray.append(role.id.rawValue)
+            }
+            
+            button.guild.modifyMember(button.user.id, with: ["roles": rolesArray])
+            button.reply(message: "Successfully added the They/Them role.")
+        }
+        else if button.selectedButton.customId == "brutal" {
+            // Check if the member has the role
+            for role in button.member!.roles {
+                if role.name == "brutal" {
+                    let roles = button.member!.roles.filter { $0.id != 932442263114633277 }
+                    var rolesArray = [UInt64]()
+                    
+                    for role in roles {
+                        rolesArray.append(role.id.rawValue)
+                    }
+                    
+                    button.guild.modifyMember(button.user.id, with: ["roles": rolesArray])
+                    button.reply(message: "Successfully removed the brutal role.")
+                    return
+                }
+            }
+            
+            var rolesArray: [UInt64] = [932442263114633277]
+            for role in button.member!.roles {
+                rolesArray.append(role.id.rawValue)
+            }
+            
+            button.guild.modifyMember(button.user.id, with: ["roles": rolesArray])
+            button.reply(message: "Successfully added the brutal role.")
+        }
+        else if button.selectedButton.customId == "good_for_u" {
+            // Check if the member has the role
+            for role in button.member!.roles {
+                if role.name == "good 4 u" {
+                    let roles = button.member!.roles.filter { $0.id != 932441982003994625 }
+                    var rolesArray = [UInt64]()
+                    
+                    for role in roles {
+                        rolesArray.append(role.id.rawValue)
+                    }
+                    
+                    button.guild.modifyMember(button.user.id, with: ["roles": rolesArray])
+                    button.reply(message: "Successfully removed the good 4 u role.")
+                    return
+                }
+            }
+            
+            var rolesArray: [UInt64] = [932441982003994625]
+            for role in button.member!.roles {
+                rolesArray.append(role.id.rawValue)
+            }
+            
+            button.guild.modifyMember(button.user.id, with: ["roles": rolesArray])
+            button.reply(message: "Successfully added the good 4 u role.")
+        }
+        else if button.selectedButton.customId == "drivers_license" {
+            // Check if the member has the role
+            for role in button.member!.roles {
+                if role.name == "drivers license" {
+                    let roles = button.member!.roles.filter { $0.id != 932444143492411393 }
+                    var rolesArray = [UInt64]()
+                    
+                    for role in roles {
+                        rolesArray.append(role.id.rawValue)
+                    }
+                    
+                    button.guild.modifyMember(button.user.id, with: ["roles": rolesArray])
+                    button.reply(message: "Successfully removed the drivers license role.")
+                    return
+                }
+            }
+            
+            var rolesArray: [UInt64] = [932444143492411393]
+            for role in button.member!.roles {
+                rolesArray.append(role.id.rawValue)
+            }
+            
+            button.guild.modifyMember(button.user.id, with: ["roles": rolesArray])
+            button.reply(message: "Successfully added the drivers license role.")
+        }
+        else if button.selectedButton.customId == "deja_vu" {
+            // Check if the member has the role
+            for role in button.member!.roles {
+                if role.name == "deja vu" {
+                    let roles = button.member!.roles.filter { $0.id != 932442323156078633 }
+                    var rolesArray = [UInt64]()
+                    
+                    for role in roles {
+                        rolesArray.append(role.id.rawValue)
+                    }
+                    
+                    button.guild.modifyMember(button.user.id, with: ["roles": rolesArray])
+                    button.reply(message: "Successfully removed the deja vu role.")
+                    return
+                }
+            }
+            
+            var rolesArray: [UInt64] = [932442323156078633]
+            for role in button.member!.roles {
+                rolesArray.append(role.id.rawValue)
+            }
+            
+            button.guild.modifyMember(button.user.id, with: ["roles": rolesArray])
+            button.reply(message: "Successfully added the deja vu role.")
+        }
+        else if button.selectedButton.customId == "hope_ur_ok" {
+            // Check if the member has the role
+            for role in button.member!.roles {
+                if role.name == "hope ur ok" {
+                    let roles = button.member!.roles.filter { $0.id != 932442887663280168 }
+                    var rolesArray = [UInt64]()
+                    
+                    for role in roles {
+                        rolesArray.append(role.id.rawValue)
+                    }
+                    
+                    button.guild.modifyMember(button.user.id, with: ["roles": rolesArray])
+                    button.reply(message: "Successfully removed the hope ur ok role.")
+                    return
+                }
+            }
+            
+            var rolesArray: [UInt64] = [932442887663280168]
+            for role in button.member!.roles {
+                rolesArray.append(role.id.rawValue)
+            }
+            
+            button.guild.modifyMember(button.user.id, with: ["roles": rolesArray])
+            button.reply(message: "Successfully added the hope ur ok role.")
+        }
+        else if button.selectedButton.customId == "traitor" {
+            // Check if the member has the role
+            for role in button.member!.roles {
+                if role.name == "traitor" {
+                    let roles = button.member!.roles.filter { $0.id != 932442776178683904 }
+                    var rolesArray = [UInt64]()
+                    
+                    for role in roles {
+                        rolesArray.append(role.id.rawValue)
+                    }
+                    
+                    button.guild.modifyMember(button.user.id, with: ["roles": rolesArray])
+                    button.reply(message: "Successfully removed the traitor role.")
+                    return
+                }
+            }
+            
+            var rolesArray: [UInt64] = [932442776178683904]
+            for role in button.member!.roles {
+                rolesArray.append(role.id.rawValue)
+            }
+            
+            button.guild.modifyMember(button.user.id, with: ["roles": rolesArray])
+            button.reply(message: "Successfully added the traitor role.")
         }
     }
 }
