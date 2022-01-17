@@ -14,5 +14,6 @@ let messageLogger = MessageLogger(bot: bot)
 messageLogger.messageLogger()
 slashCommandListener()
 buttonClick()
+JoinLogger().joinLogger()
 
 bot.connect()
