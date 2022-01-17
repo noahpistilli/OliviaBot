@@ -13,7 +13,11 @@ func slashCommandListener() {
         let event = data as! SlashCommandEvent
             
         if event.name == "clear" {
-            clear(event: event)
+            if event.member!.hasPermission(.banMembers) {
+                clear(event: event)
+            } else {
+                event.reply(message: "You cannot use that command!")
+            }
         }
         else if event.name == "lyrics" {
             Lyrics().getLyrics(event: event)
