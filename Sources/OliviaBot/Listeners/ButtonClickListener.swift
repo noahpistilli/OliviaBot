@@ -114,6 +114,31 @@ func buttonClick() {
             button.guild.modifyMember(button.user.id, with: ["roles": rolesArray])
             button.reply(message: "Successfully added the Tour Updates role.")
         }
+        else if button.selectedButton.customId == "hsmtmts" {
+            // Check if the member has the role
+            for role in button.member!.roles {
+                if role.name == "Wildcats" {
+                    let roles = button.member!.roles.filter { $0.id != 933765820285329428 }
+                    var rolesArray = [UInt64]()
+                    
+                    for role in roles {
+                        rolesArray.append(role.id.rawValue)
+                    }
+                    
+                    button.guild.modifyMember(button.user.id, with: ["roles": rolesArray])
+                    button.reply(message: "Successfully removed the Wildcats role.")
+                    return
+                }
+            }
+            
+            var rolesArray: [UInt64] = [933765820285329428]
+            for role in button.member!.roles {
+                rolesArray.append(role.id.rawValue)
+            }
+            
+            button.guild.modifyMember(button.user.id, with: ["roles": rolesArray])
+            button.reply(message: "Successfully added the Wildcats role.")
+        }
         
         // MARK: General Roles
         else if button.selectedButton.customId == "female" {
