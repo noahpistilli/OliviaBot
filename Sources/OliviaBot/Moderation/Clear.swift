@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Sword
+import Swiftcord
 
 func clear(event: SlashCommandEvent) {
         let channel = bot.getChannel(for: event.channelId)! as! GuildText

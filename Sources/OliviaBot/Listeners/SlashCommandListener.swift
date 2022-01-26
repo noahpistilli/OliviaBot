@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Sword
+import Swiftcord
 
 func slashCommandListener() {
     bot.on(.slashCommandEvent) { data in

@@ -6,13 +6,13 @@
 //
 
 import Foundation
-import Sword
+import Swiftcord
 
 class MessageLogger {
-    let bot: Sword
+    let bot: Swiftcord
     var messageCache = [Snowflake:Message]()
     
-    init(bot: Sword) {
+    init(bot: Swiftcord) {
         self.bot = bot
     }
     

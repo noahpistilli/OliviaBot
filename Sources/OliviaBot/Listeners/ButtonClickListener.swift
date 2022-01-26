@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Sword
+import Swiftcord
 
 func buttonClick() {
     bot.on(.buttonEvent) { data in

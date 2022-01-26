@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Sword
+import Swiftcord
 
 struct Confessions {
     func sendSuccess(event: SlashCommandEvent) {
@@ -19,23 +19,23 @@ struct Confessions {
     }
     
     func sendToChannel(event: SlashCommandEvent) {
-        var embed = Embed()
-        embed.title = "Confession"
-        embed.description = event.getOptionAsString(optionName: "confession")!
-        embed.footer = Embed.Footer(text: "Sent at \(self.timeStamp()) UTC")
-        embed.color = 0xb19cd9
+        let embed = EmbedBuilder()
+            .setTitle(title: "Confession")
+            .setDescription(description: event.getOptionAsString(optionName: "confession")!)
+            .setColor(color: 0xb19cd9)
+            .setTimestamp()
         
-        event.sword.send(embed, to: 932331114608095272)
+        event.swiftcord.send(embed, to: 932331114608095272)
     }
     
     func logToChannel(event: SlashCommandEvent) {
-        var embed = Embed()
-        embed.title = "A new confession was sent by \(event.user.username!) ID: (\(event.user.id))"
-        embed.description = event.getOptionAsString(optionName: "confession")!
-        embed.footer = Embed.Footer(text: "Sent at \(self.timeStamp()) UTC")
-        embed.color = 0xb19cd9
+        let embed = EmbedBuilder()
+            .setTitle(title: "A new confession was sent by \(event.user.username!) ID: (\(event.user.id))")
+            .setDescription(description: event.getOptionAsString(optionName: "confession")!)
+            .setColor(color: 0xb19cd9)
+            .setTimestamp()
         
-        event.sword.send(embed, to: 932328333478334517)
+        event.swiftcord.send(embed, to: 932328333478334517)
     }
     
     func timeStamp() -> String {

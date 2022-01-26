@@ -11,7 +11,7 @@ import FoundationNetworking
 
 import Foundation
 import SwiftSoup
-import Sword
+import Swiftcord
 
 struct Lyrics {
     func getLyrics(event: SlashCommandEvent) {
@@ -46,15 +46,20 @@ struct Lyrics {
             
             let lyricsHTML = try String(contentsOf: url)
             doc = try SwiftSoup.parse(lyricsHTML)
-            let div = try doc.select("div.col-lg-8").first()!
+            guard let div = try doc.select("div.col-lg-8").first() else {
+                return EmbedBuilder().setTitle(title: "The requested song does not exist.")
+            }
+            
             let title = try div.select("b").get(1)
             let lyricsText = try div.select("div").get(6)
             
-            let authorDiv = try div.select("div.lyricsh").first()!
+            guard let authorDiv = try div.select("div.lyricsh").first() else {
+                return EmbedBuilder().setTitle(title: "The author cannot be found.")
+            }
             var author = try authorDiv.select("b").first()!.text()
             author = author.replacingOccurrences(of: "Lyrics", with: "")
             
-            var lyrics = try SwiftSoup.clean(SwiftSoup.clean(try! lyricsText.html(), Whitelist.none().addTags("br", "p"))!, "",  Whitelist.none(), OutputSettings().prettyPrint(pretty: false))!
+            var lyrics = try SwiftSoup.clean(SwiftSoup.clean(try lyricsText.html(), Whitelist.none().addTags("br", "p"))!, "",  Whitelist.none(), OutputSettings().prettyPrint(pretty: false))!
             
             // An embed description can have a max of 2000 characters
             if lyrics.count > 2000 {

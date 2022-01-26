@@ -7,12 +7,12 @@ let package = Package(
     name: "OliviaBot",
     platforms: [.macOS(.v10_15)],
     dependencies: [
-        .package(url: "https://github.com/SketchMaster2001/Sword", branch: "master"),
-        .package(url: "https://github.com/scinfu/SwiftSoup.git", from: "1.7.4")
+        .package(url: "https://github.com/SketchMaster2001/Swiftcord", branch: "master"),
+        .package(url: "https://github.com/scinfu/SwiftSoup.git", from: "2.3.8")
     ],
     targets: [
-        .target(
+        .executableTarget(
             name: "OliviaBot",
-            dependencies: ["Sword", "SwiftSoup"]),
+            dependencies: ["Swiftcord", "SwiftSoup"]),
     ]
 )
