@@ -1,4 +1,4 @@
-import Sword
+import Swiftcord
 
 let options = ShieldOptions(prefixes: ["o-"])
 let bot = Shield(token: "token", shieldOptions: options)
