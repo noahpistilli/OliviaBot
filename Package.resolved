@@ -1,0 +1,61 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "swift-nio",
+        "repositoryURL": "https://github.com/apple/swift-nio.git",
+        "state": {
+          "branch": null,
+          "revision": "51c3fc2e4a0fcdf4a25089b288dd65b73df1b0ef",
+          "version": "2.37.0"
+        }
+      },
+      {
+        "package": "swift-nio-ssl",
+        "repositoryURL": "https://github.com/apple/swift-nio-ssl.git",
+        "state": {
+          "branch": null,
+          "revision": "52a486ff6de9bc3e26bf634c5413c41c5fa89ca5",
+          "version": "2.17.2"
+        }
+      },
+      {
+        "package": "Swiftcord",
+        "repositoryURL": "https://github.com/SketchMaster2001/Swiftcord",
+        "state": {
+          "branch": "dev",
+          "revision": "8491b0323cbb27bc1f1281b07814e67260aab266",
+          "version": null
+        }
+      },
+      {
+        "package": "SwiftSoup",
+        "repositoryURL": "https://github.com/scinfu/SwiftSoup.git",
+        "state": {
+          "branch": null,
+          "revision": "13ba661fd1146967270fca92ce8195b223631436",
+          "version": "2.3.8"
+        }
+      },
+      {
+        "package": "URLSessionBackport",
+        "repositoryURL": "https://github.com/mochidev/URLSessionBackport.git",
+        "state": {
+          "branch": "main",
+          "revision": "133026d8723a81d7ddd293ce3d9fcadf72317517",
+          "version": null
+        }
+      },
+      {
+        "package": "websocket-kit",
+        "repositoryURL": "https://github.com/vapor/websocket-kit",
+        "state": {
+          "branch": "main",
+          "revision": "ff8fbce837ef01a93d49c6fb49a72be0f150dac7",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
